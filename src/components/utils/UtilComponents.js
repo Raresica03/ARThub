@@ -28,7 +28,6 @@ export const OutsideCircle = styled.div`
   border-radius: 100%;
   background-color: white;
   padding: 4px;
-  cursor: pointer;
   box-shadow: 1px 2px 5px;
 `;
 
