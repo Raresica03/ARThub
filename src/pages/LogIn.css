@@ -1,0 +1,92 @@
+body{
+    margin: auto;
+}
+
+.login-wrapper {
+    margin: auto;
+    text-align: center;
+    width: 350px;
+    height: auto;
+    background-color: #fff;
+    padding: 30px;
+    row-gap: 30px;
+    border-radius: 5px;
+    box-shadow: 1px 2px 5px #ccc;
+    display: flex;
+    flex-direction: column;
+}
+
+.signup-wrapper{
+    margin: auto;
+    text-align: center;
+    width: 350px;
+    height: auto;
+    background-color: #fff;
+    padding: 30px;
+    row-gap: 30px;
+    border-radius: 5px;
+    box-shadow: 1px 2px 5px #ccc;
+    display: flex;
+    flex-direction: column;
+}
+
+.logo-img{
+    margin: auto;
+    width: 150px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.submit-button{
+    position: relative;
+    bottom: 20px;
+    right: 20px;
+    width: 100px;
+    border-radius: 5px;
+    height: 30px;
+    background-color: darkgray;
+    border: 0;
+    cursor: pointer;
+}
+
+
+.username, .password{
+    border: 1px solid #BDBDBD;
+    border-radius: 30px;
+    width: 200px
+}
+
+.question{
+    margin-top: 30px;
+    color: darkgrey;
+    text-decoration: none;
+}
+
+.question:hover{
+    color: black;
+}
+
+.question:visited{
+    color: darkblue;
+}
+
+.label-title{
+    margin-top: 20px;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+#submit-button{
+    background-color: #e8e8e8 ;
+    margin-top: 50px;
+    border-radius: 20px;
+    color: black;
+}
+
+#submit-button:hover {
+    background-color: #dedede
+}
+
+#submit-button:active {
+    background-color: #dedede
+}
