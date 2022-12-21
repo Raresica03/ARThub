@@ -1,0 +1,44 @@
+
+  .section {
+    display: flex;
+    flex-direction: column;
+    padding-top: 6px;
+    padding-bottom: 6px;
+  }
+
+  .mainContainer {
+    flex: 1 1 0%;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+
+  .mainText {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  .the-next {
+    flex: 1 1 0%;
+    font-size: medium;
+    size: 52px;
+    color: white;
+  }
+
+  .generation {
+    background: white;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+  }
+
+  .getStarted {
+    display: flex;
+    margin-right: 0px;
+  }

@@ -4,9 +4,18 @@
 
 body{
 margin: 0;
+background-color: black;
+width: 100%;
+overflow: hidden;
 }
 
 .container {
-  margin: 1rem;
-  text-align: center;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+}
+
+.secondContainer {
+  width: 100%;
 }
