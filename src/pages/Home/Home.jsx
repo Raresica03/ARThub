@@ -9,8 +9,8 @@ import {
     RightPageContainer
 } from "../../components/utils/UtilComponents";
 import arrowUP from "../../assets/arrowUP.png";
-import paint1 from "../../assets/paint1.jpg"
-import paint2 from "../../assets/paint2.jpg"
+import paint1 from "../../assets/paint1.jpg";
+import paint2 from "../../assets/paint2.jpg";
 
 const Home = () => {
 

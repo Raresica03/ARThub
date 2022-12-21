@@ -62,11 +62,6 @@ export const PictureContainer2 = styled.div`
 `;
 
 //Product page
-export const MenuContainer = styled.div`
-  height: 100%;
-  width: 25%;
-  `;
-
 export const CardsContainer = styled.div`
   height: 100%;
   padding: 30px;
@@ -77,16 +72,6 @@ export const ProduseContainer = styled.div`
   height: 100%;
   width: 100%;
   flex-direction: row;
-  `;
-
-export const MenuBox = styled.div`
-  background-color: #FFC07F;
-  padding: 20px;
-  position: fixed;
-  width: 20%;
-  height: 40vw;
-  margin-top: 50px;
-  box-shadow: 1px 2px 5px;
   `;
 
 //Login page
@@ -136,3 +121,44 @@ export const SignUpBox = styled.div`
   text-align: center;
   margin-top: 50px;
     `;
+
+//ContulMeu
+
+export const ContulMeuContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+`;
+
+export const ContulMeuBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  box-shadow: 1px 2px 5px;
+  border-radius: 10px;
+  row-gap: 30px;
+  padding: 30px;
+  background-color: #FFC07F;
+  height: auto;
+  width: 500px;
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+    `;
+
+//Create Product
+
+export const CreateProductBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  box-shadow: 1px 2px 5px;
+  border-radius: 10px;
+  row-gap: 30px;
+  padding: 30px;
+  background-color: #FFC07F;
+  height: auto;
+  width: 500px;
+  text-align: center;
+  margin-top: 50px;
+`;

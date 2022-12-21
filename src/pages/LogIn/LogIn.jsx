@@ -1,7 +1,8 @@
 import React, {useState} from 'react'
 import {TextField, Button} from '@mui/material'
-import {signInWithEmailAndPassword, onAuthStateChanged} from "firebase/auth"
-import {auth} from '../../firebase'
+import { useNavigate } from "react-router-dom";
+import { Auth } from '../../global/Auth';
+import { auth } from '../../firebase';
 import {LogInBox, LogInContainer} from "../../components/utils/UtilComponents";
 
 const LogIn = () => {
@@ -9,58 +10,55 @@ const LogIn = () => {
     const [logInEmail, setLogInEmail] = useState("");
     const [logInPassword, setLogInPassword] = useState("");
 
-    const [user, setUser] = useState({})
+    const { user, signIn } = Auth();
+    const navigate = useNavigate();
 
-    const login = async () => {
-        await signInWithEmailAndPassword(auth, logInEmail, logInPassword)
-            .then((userCredential) => {
-                // Signed in
-                console.log(user)
-                // ...
-            })
-            .catch((error) => {
-                const errorMessage = error.message;
-                console.log(errorMessage)
-            });
-    }
-
-    onAuthStateChanged(auth, (currentUser) => {
-        if (currentUser) {
-            setUser(currentUser);
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            console.log(auth.currentUser)
+            await signIn(logInEmail, logInPassword);
+            navigate('/contulMeu')
+        } catch (e) {
+            console.log(e.message)
+            if (e.code === 'auth/user-not-found' || e.code ==='auth/invalid-email'){
+                document.querySelector('.error').innerHTML = "Invalid email address!";
+            }
+            if (e.code === 'auth/wrong-password'){
+                document.querySelector('.error').innerHTML = "Wrong password!";
+            }
         }
-    })
+    };
 
     return (
         <div>
+            <form onSubmit={handleSubmit}>
             <LogInContainer>
-                <LogInBox>
+            <LogInBox>
+                    {auth.currentUser ? "Esti logat ca: " + `${user.email}` : <div>
                     <h1>Log In</h1>
-                    <TextField
-                        fullWidth
-                        id="textfield"
-                        label="Email"
-                        variant="standard"
-                        size='small'
-                        name='email'
-                        type='email'
-                        onChange={(event) => {
-                            setLogInEmail(event.target.value)
-                        }}
-
-                    />
-                    {/* {errors.email && touched.email ? <div>{errors.email}</div> : null} */}
-
-                    <TextField
-                        fullWidth
-                        type="password"
-                        id="textfield"
-                        label="Parola"
-                        variant="standard"
-                        size='small'
-                        onChange={(event) => {
-                            setLogInPassword(event.target.value)
-                        }}
-
+                        <TextField
+                            fullWidth
+                            id="email"
+                            label="email"
+                            variant="standard"
+                            size='small'
+                            name='email'
+                            type='email'
+                            onChange={(event) => {
+                                setLogInEmail(event.target.value)
+                            }}
+                        />
+                        <TextField
+                            fullWidth
+                            type="password"
+                            id="password"
+                            label="Parola"
+                            variant="standard"
+                            size='small'
+                            onChange={(event) => {
+                                setLogInPassword(event.target.value)
+                            }}
                     />
                     <p>
                         <a style={{textDecoration: "none", fontSize: "20px"}} href='../SignUp'>Don't have an account?</a>
@@ -69,13 +67,15 @@ const LogIn = () => {
                         id='submit-button'
                         fullWidth
                         variant="contained"
-                        onClick={login}
+                        type="submit"
                         style={{backgroundColor: "white", borderRadius: "20px", color: "black", fontSize: "medium", fontWeight: "bold"}}
                     >
                         Log In
                     </Button>
-                </LogInBox>
+                </div>}
+            </LogInBox>
             </LogInContainer>
+            </form>
         </div>
     );
 };

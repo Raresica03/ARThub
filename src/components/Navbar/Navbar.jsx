@@ -1,9 +1,10 @@
 import React from "react";
 import { Link, useMatch, useResolvedPath } from "react-router-dom"
 import './Navbar.css'
-import LoginIcon from '@mui/icons-material/Login';
 import PermContactCalendarIcon from '@mui/icons-material/PermContactCalendar';
 import ColorLensIcon from '@mui/icons-material/ColorLens';
+import PersonIcon from '@mui/icons-material/Person';
+
 
 const Navbar = () => {
   return (
@@ -12,14 +13,14 @@ const Navbar = () => {
         ARThub
       </Link>
       <ul>
+          <CustomLink to="/ContulMeu">Contul meu
+              <PersonIcon style={{ padding: '0', marginLeft: '10px'}}></PersonIcon>
+          </CustomLink>
         <CustomLink to="/Produse">Produse
           <ColorLensIcon style={{ padding: '0', marginLeft: '10px'}}></ColorLensIcon>
         </CustomLink>
         <CustomLink to="/Contact">Contact
           <PermContactCalendarIcon style={{ padding: '0', marginLeft: '10px' }}></PermContactCalendarIcon>
-        </CustomLink>
-        <CustomLink to="/LogIn">LogIn
-          <LoginIcon style={{ padding: '0', marginLeft: '10px' }}></LoginIcon>
         </CustomLink>
       </ul>
     </nav>
